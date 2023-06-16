@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import {Routes, Route} from "react-router-dom"
+import Layout from "./components/Layout"
+import LoginWallet from "./components/LoginWallet"
+import DashLayout from "./components/DashLayout"
+import LoggedIn from "./features/auth/LoggedIn"
+import PersistLogin from "./features/auth/PersistLogin"
+import RequireAuth from "./features/auth/RequireAuth"
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <Routes>
+            <Route path="/" element={<Layout />}>
+                <Route index element={<LoginWallet />} />
+
+                <Route element={<PersistLogin />}>
+                    <Route element={<RequireAuth />}>
+                        <Route path="dash" element={<DashLayout />}>
+                            <Route index element={<LoggedIn />} />
+                        </Route>
+                    </Route>
+                </Route>
+            </Route>
+        </Routes>
+    )
 }
 
-export default App;
+export default App

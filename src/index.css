@@ -1,13 +1,167 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    --color-primary: #515252;
+    --color-primary-dark: #2b53be;
+    --color-secondary: #252c6a;
+    --color-error: #cc3333;
+    --color-success: #4bb544;
+    --border-radius: 4px;
+
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+    font-size: 18px;
+    background: url(../public/grid-background.jpg);
+    background-size: 1280px 610px;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.login-wrap {
+    position: absolute;
+    width: 400px;
+    max-width: 400px;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    justify-content: center;
+    margin: 1rem;
+    padding: 2rem;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
+    border-radius: var(--border-radius);
+    background: #ffffff;
+}
+
+.header-wrap {
+    background-color: #5e5e5e;
+    display: flex;
+    justify-content: space-between;
+    float: left;
+    padding: 8px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.curent-user {
+    background: #bbb6b6;
+    padding: 2px;
+}
+
+.logged-in-wrap {
+    position: absolute;
+    width: 700px;
+    max-width: 800px;
+    height: 300px;
+    max-height: 400px;
+    justify-content: center;
+    align-items: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 1rem;
+    padding: 2rem;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
+    border-radius: var(--border-radius);
+    background: #bbb6b6;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.container > * + * {
+    margin-top: 40px;
+}
+
+.table {
+    background-color: #979494;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+td {
+    text-align: center;
+}
+
+.login-button {
+    font: 500 1rem "Quicksand", sans-serif;
+}
+
+.login-title {
+    /* margin-bottom: 2rem; */
+    text-align: center;
+    font-size: 40px;
+}
+
+.login-parg {
+    text-align: center;
+    font-size: 17px;
+}
+
+.login-button {
+    width: 100%;
+    padding: 1rem 2rem;
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: #ffffff;
+    border: none;
+    border-radius: var(--border-radius);
+    outline: none;
+    cursor: pointer;
+    background: var(--color-primary);
+}
+
+.login-button:hover {
+    background: var(--color-primary-dark);
+}
+
+.login-button:active {
+    transform: scale(0.98);
+}
+
+.logout-button {
+    background-color: #7c3a36;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.print-button {
+    background-color: #020f8a;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.print-button:hover {
+    background: var(#010b5f);
+}
+
+.print-button:active {
+    transform: scale(0.98);
+}
+
+.paragraph {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
 }
